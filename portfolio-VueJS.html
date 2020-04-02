@@ -1,0 +1,251 @@
+<!doctype html>
+<html lang="fr">
+
+<head>
+    <meta charset="utf-8">
+    <title>Portfolio Laure Cardinaud</title>
+    <link href="https://fonts.googleapis.com/css?family=Lato&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Lato', sans-serif;
+            margin: 0 5vw 0 5vw;
+            background-color: #f5f5f5;
+        }
+
+
+        /* -----------------------------------------------------------------------début css HEADER */
+        nav {
+            display: flex;
+            flex-direction: row;
+            background-color: white;
+            color: #555555;
+            height: 100px;
+            justify-content: space-between;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            margin-left: 25px;
+        }
+
+        .logo img {
+            width: 70%;
+        }
+
+        .navbar {
+            display: flex;
+            flex-direction: row;
+        }
+
+        ul {
+            list-style-type: none;
+            margin-right: 25px;
+            display: flex;
+            align-items: center;
+        }
+
+        ul li a {
+            text-decoration: none;
+            color: #555555;
+            text-transform: uppercase;
+            font-size: 1em;
+            padding: 15px;
+        }
+
+        /* -----------------------------------------------------------------------fin css HEADER */
+
+        /* -----------------------------------------------------------------------début css WRAPPER GALERIE */
+
+        .wrapper {
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
+            grid-gap: 10px;
+        }
+
+        /* -----------------------------------image n&b */
+
+        .wrapper img {
+            width: 100%;
+            filter: grayscale(100%);
+            -webkit-filter: grayscale(100%);
+            -moz-filter: grayscale(100%);
+            -ms-filter: grayscale(100%);
+            -o-filter: grayscale(100%);
+            transition: all 0.3s ease-out;
+
+        }
+        
+
+        /* -----------------------------------image couleur */
+
+        .wrapper img:hover {
+            width: 100%;
+            filter: none;
+
+        }
+
+
+        /*----------------------------------- position des projets */
+
+        /* .projet1 {
+            grid-column: 1 / 2;
+            grid-row: 1 / 2;
+        }
+
+        .projet2 {
+            grid-column: 2 / 3;
+            grid-row: 1 / 2;
+        }
+
+        .projet3 {
+            grid-column: 3 / 4;
+            grid-row: 1 / 2;
+        } */
+
+        .bloc-projet {
+            position: relative;
+            text-align: center;
+            justify-content: space-around;
+        }
+
+        .texte-projet {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            pointer-events: none;
+            
+        }
+
+        /* -----------------------------------------------------------------------fin css WRAPPER GALERIE */
+    </style>
+</head>
+
+
+<body>
+
+    <!-------------------------------------------------------------------------- début html HEADER -->
+    <nav>
+        <div class="logo">
+            <a href="#!"><img src="img/logo-laure.png"></a>
+        </div>
+        <ul class="navbar">
+            <li><a href="#!">A propos</a></li>
+            <li><a href="#!">Contact</a></li>
+        </ul>
+
+    </nav>
+    <!-------------------------------------------------------------------------- fin html HEADER -->
+
+    <!-------------------------------------------------------------------------- début html FOOTER -->
+
+    <footer>
+        
+
+
+    </footer>
+
+
+
+
+
+    <!------------------------------------------------------------------------------- début Vue JS -->
+
+
+    <div id="portfolio">
+        <div class="wrapper">
+            <div class="bloc-projet" v-for="projet in projets">
+                <img class="images" :src="projet.image">
+                <div class="texte-projet">
+                    <h1 class="titre">{{projet.titre}}</h1>
+                    <div class="description">{{projet.description}}</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <script>
+        new Vue({
+            el: "#portfolio",
+            data: {
+                projets: [
+                    {
+                        titre: "HOMOON",
+                        image: "img/homoon-home.jpg",
+                        description: "Design Interiors",
+                    },
+
+                    {
+                        titre: "LA SELLE PUB",
+                        image: "img/laselle-home.jpg",
+                        description: "Pub de Morlaix",
+                    },
+                    {
+                        titre: "DOUBLE EXPOSITION",
+                        image: "img/double-expo-home.jpg",
+                        description: "Manipulations photographiques",
+                    },
+
+                    {
+                        titre: "LOW POLY MARVIN",
+                        image: "img/h2g2-home.jpg",
+                        description: "H2G2 tribute",
+                    },
+
+                    {
+                        titre: "INSTAGRAM REDESIGN",
+                        image: "img/insta-redesign-home.jpg",
+                        description: "Redesign fictif",
+                    },
+
+                    {
+                        titre: "FLAT REPLICANTS",
+                        image: "img/flat-replicants-home.jpg",
+                        description: "Blade Runner tribute",
+                    },
+
+                    {
+                        titre: "THE FLEA MARKET LADY",
+                        image: "img/duane-hanson-home.jpg",
+                        description: "Duane Hanson",
+                    },
+
+                    {
+                        titre: "MILIA SUSPIRIA",
+                        image: "img/miliasuspiria-home.jpg",
+                        description: "Bijoux, curiosités et petites diableries",
+                    },
+
+                    {
+                        titre: "OUEST PARAPENTE NANTES",
+                        image: "img/parapente-home.jpg",
+                        description: "Ecole de parapente",
+                    },
+
+                    {
+                        titre: "PELLEAS ET MELISANDE",
+                        image: "img/costume-home.jpg",
+                        description: "Costume de théâtre",
+                    },
+
+
+                    
+
+                ]
+            }
+        });
+
+    </script>
+
+
+
+
+</body>
+
+
+</html>
