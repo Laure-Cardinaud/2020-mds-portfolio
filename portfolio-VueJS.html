@@ -116,25 +116,52 @@
         }
 
         .bloc-logo {
-            background-color: blue;
-            grid-column: 1/3;
+            border: black 2px solid;
+            grid-column: 1/2;
             grid-row: 1/2;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            padding: 2vw;
+        }
+
+        .social-media img {
+            width: 2vw;
+            margin-top: 2vh;
         }
 
         .bloc-contact {
-            background-color:blueviolet;
+            border: black 2px solid;
             grid-column: 2/3;
             grid-row: 1/2;
+            display: flex;
+            flex-direction:column;
+            justify-content: center;
+        }
+
+        .sous-bloc-contact {
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .icon-contact img {
+            width: 2vw;
+            padding-right: 1vw;
         }
 
         .bloc-mentions {
-            background-color:cadetblue;
+            border: black 2px solid;
             grid-column: 1/3;
             grid-row: 2/3;
+            display: flex;
+            align-items: center;
+            justify-content: center;
         }
 
-
-
+        /* -----------------------------------------------------------------------fin css FOOTER */
     </style>
 </head>
 
@@ -250,24 +277,50 @@
 
     </script>
 
-<!-------------------------------------------------------------------------- début html FOOTER -->
+    <!-------------------------------------------------------------------------- début html FOOTER -->
 
-<footer>
-    <div class="bloc-logo">Logo + réseaux sociaux
-    </div>
+    <footer>
+        <div class="bloc-logo">
+            <div class="logo-footer">
+                <img src="img/logo-laure.png" alt="Logo Laure">
+            </div>
+            <div class="social-media">
+                <img src="img/linkedin.png">
+                <img src="img/behance.png">
+                <img src="img/instagram.png">
 
-    <div class="bloc-contact">
-        Contact
-    </div>
+            </div>
+        </div>
 
-    <div class="bloc-mentions">
-        Mentions légales
-    </div>
+        <div class="bloc-contact">
+            <div class="sous-bloc-contact">
+                <div class="icon-contact">
+                    <img src="img/placeholder.png">
+                </div>
+                <p>Nantes, France</p>
+            </div>
+            <div class="sous-bloc-contact">
+                <div class="icon-contact">
+                    <img src="img/mail.png">
+                </div>
+                <p><a href="mailto:laure.cardinaud@gmail.com">laure.cardinaud@gmail.com</a></p>
+            </div>
+            <div class="sous-bloc-contact">
+                <div class="icon-contact">
+                    <img src="img/phone.png">
+                </div>
+                <p>06 07 65 71 55</p>
+            </div>
+        </div>
+
+        <div class="bloc-mentions">
+            ©Laure Cardinaud | Tous droits réservés | <a href="#">Mentions légales</a>
+        </div>
 
 
 
 
-</footer>
+    </footer>
 
 
 </body>
