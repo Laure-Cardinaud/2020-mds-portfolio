@@ -80,7 +80,7 @@
             padding: 15px;
         }
 
-        .social-media img:hover{
+        .social-media img:hover {
             opacity: 50%;
             transition: all 0.3s ease-out;
         }
@@ -148,63 +148,72 @@
             justify-content: center;
         }
 
-        .bloc-mentions a{
+        .bloc-mentions a {
             color: black;
         }
 
-        .bloc-mentions a:hover{
+        .bloc-mentions a:hover {
             opacity: 50%;
             transition: all 0.3s ease-out;
         }
-
     </style>
 </head>
 
 
 <body>
+    <div id="app">
 
-    <!-------------------------------------------------------------------------- HTML HEADER -->
-    <nav>
+        <!-------------------------------------------------------------------------- HTML HEADER -->
+        <nav>
 
-        <div class="flex-nav">
-            <ul class="navbar">
-                <li><a href="file:///C:/Users/laure/Documents/GitHub/2020-mds-portfolio/portfolio-VueJS.html">Home</a></li>
-                <li><a href="#!">A propos</a></li>
-                <li><a href="#!">Contact</a></li>
-            </ul>
-
-            <div class="logo">
-                <a href="file:///C:/Users/laure/Documents/GitHub/2020-mds-portfolio/portfolio-VueJS.html"><img
-                        src="img/logo-laure.png"></a>
+            <div class="flex-nav">
+                <ul class="navbar">
+                    <li @click="display = 'portfolio'"><a href="#!">Home</a></li>
+                    <li @click="display = 'a-propos'"><a href="#!">A propos</a></li>
+                    <li><a href="#!">Contact</a></li>
+                </ul>
+    
+                <div class="logo">
+                    <a href="file:///C:/Users/laure/Documents/GitHub/2020-mds-portfolio/portfolio-VueJS.html"><img
+                            src="img/logo-laure.png"></a>
+                </div>
+    
+                <div class="social-media">
+                    <a href="https://www.linkedin.com/in/laure-cardinaud/" target="_blank"><img src="img/linkedin.png"></a>
+                    <a href="https://www.behance.net/laureC" target="_blank"><img src="img/behance.png"></a>
+                    <a href="https://www.instagram.com/miliasuspiria/" target="_blank"><img src="img/instagram.png"></a>
+                </div>
             </div>
-
-            <div class="social-media">
-                <a href="https://www.linkedin.com/in/laure-cardinaud/" target="_blank"><img src="img/linkedin.png"></a>
-                <a href="https://www.behance.net/laureC" target="_blank"><img src="img/behance.png"></a>
-                <a href="https://www.instagram.com/miliasuspiria/" target="_blank"><img src="img/instagram.png"></a>
-            </div>
-        </div>
+        </nav>
 
 
+        <!------------------------------------------------------------------------------- VUE JS -->
 
 
+        <div id="portfolio" v-if="display === 'portfolio'">
+            <div class="wrapper">
+                <div class="bloc-projet" v-for="( projet, id) in projets">
 
-    </nav>
-
-
-    <!------------------------------------------------------------------------------- VUE JS -->
-
-
-    <div id="portfolio">
-        <div class="wrapper">
-            <div class="bloc-projet" v-for="projet in projets">
-                <img class="images" :src="projet.image">
-                <div class="texte-projet">
-                    <h1 class="titre">{{projet.titre}}</h1>
-                    <div class="description">{{projet.description}}</div>
+                    <img class="images" :src="projet.image" @click="displayDetailProjet(id)">
+                    <div class="texte-projet">
+                        <h1 class="titre">{{projet.titre}}</h1>
+                        <div class="description">{{projet.description}}</div>
+                    </div>
                 </div>
             </div>
         </div>
+        <div id="detail-projet" v-if="display === 'detail-projet'">
+            DETAIL PROJET
+            {{ projets[id_detail_projet].titre }}
+            {{ projets[id_detail_projet].description }}
+
+        </div>
+        <div id="a-propos" v-if="display === 'a-propos'">
+            A PROPOS
+
+
+        </div>
+    </div>
     </div>
 
 
@@ -213,8 +222,10 @@
     <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
     <script>
         new Vue({
-            el: "#portfolio",
+            el: "#app",
             data: {
+                display: "portfolio",
+                id_detail_projet: null,
                 projets: [
                     {
                         titre: "HELICEO x DJI",
@@ -287,10 +298,15 @@
                         description: "Costume de théâtre",
                     },
 
-
-
-
                 ]
+            },
+            methods: {
+                displayDetailProjet: function (projetId) {
+                    this.display = 'detail-projet';
+                    this.id_detail_projet = projetId;
+
+
+                }
             }
         });
 
