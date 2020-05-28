@@ -1,0 +1,747 @@
+<!doctype html>
+<html lang="fr">
+
+<head>
+    <meta charset="utf-8">
+    <title>CV Laure Cardinaud</title>
+
+    <!-- icônes font awesome -->
+    <script src="https://kit.fontawesome.com/827e78bfc8.js" crossorigin="anonymous"></script>
+
+    <style>
+        @font-face {
+            font-family: "futura-light";
+            src: url("font/futura-light.ttf")
+        }
+
+        body {
+            background-color: #dedede;
+            font-family: "futura-light";
+            color: #dedede;
+            padding: 100px;
+            line-height: 1.8em;
+        }
+
+        h1 {
+            text-align: left;
+            font-size: 3em;
+            color: #70cbc6;
+        }
+
+        h2 {
+            text-align: center;
+            font-size: 2.6em;
+            color: #70cbc6;
+        }
+
+        h3 {
+            font-size: 1.6em !important;
+        }
+
+        li span {
+            font-weight: bold;
+        }
+
+        hr {
+            background-color: #70cbc6;
+            border: 0px;
+            height: 2px;
+        }
+
+        li {
+            list-style-type: circle;
+        }
+
+
+
+        /* GRID CSS */
+
+
+        /* grille principale */
+        .container {
+            display: grid;
+            grid-template-columns: 50% 50%;
+        }
+
+        /* fin grille principale */
+
+
+        /********************************************************************************************** CSS header */
+
+        header {
+            grid-column: 1/3;
+            grid-row: 1/2;
+            background-image: url(img/flamingo.jpg);
+            background-repeat: no-repeat;
+            background-position: right;
+            background-size: cover;
+            padding: 5vh;
+        }
+
+        .bloc-pres {
+            display: flex;
+            flex-direction: row;
+            margin-bottom: 30px;
+
+        }
+
+        .presentation {
+            width: 50%;
+        }
+
+        .button {
+            display: block;
+            width: 12em;
+            height: 4em;
+            line-height: 60px;
+            background: #70cbc6;
+            color: #1f1f1f;
+            text-align: center;
+            text-decoration: none;
+            font-weight: bold;
+            margin: 10px 0px 10px 0px;
+            transition: opacity .2s ease-out;
+            -moz-transition: opacity .2s ease-out;
+            -webkit-transition: opacity .2s ease-out;
+            -o-transition: opacity .2s ease-out;
+        }
+
+        .button:hover {
+            opacity: 0.4;
+            transition: opacity .2s ease-out;
+            -moz-transition: opacity .2s ease-out;
+            -webkit-transition: opacity .2s ease-out;
+            -o-transition: opacity .2s ease-out;
+        }
+
+        #photo-cv {
+            width: 16em;
+            margin-right: 5vh;
+        }
+
+        .coordonnees {
+            text-align: left;
+        }
+
+        .email {
+            color: #70cbc6;
+        }
+
+        .metier {
+            font-size: 2em;
+        }
+
+        /********************************************************************************************** CSS bloc compétences */
+
+        .bloc-competences {
+            grid-column: 1/3;
+            grid-row: 2/3;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            border-bottom: #dedede 1px solid;
+            border-top: #dedede 1px solid;
+            padding: 5vh;
+            background-color: #1f1f1f;
+        }
+
+        .bloc-competences img {
+            width: 120px;
+        }
+
+        .competences {
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            text-align: center;
+        }
+
+        .competences p span {
+            font-size: 1em;
+            font-weight: bold;
+        }
+
+        .design,
+        .webdesign,
+        .webmarketing {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding: 2.5em;
+            margin: 10px;
+        }
+
+        /********************************************************************************************** CSS bloc outils */
+
+        .bloc-outils {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            border-bottom: #dedede 1px solid;
+            grid-column: 1/2;
+            grid-row: 3/4;
+            padding: 5vh;
+            background-color: #1f1f1f;
+        }
+
+        .bloc-outil {
+            margin: 4vh;
+        }
+
+        .outils-bloc {
+            margin: auto;
+            padding-top: 5vh;
+        }
+
+        .outil {
+            font-size: 1.2em;
+            font-weight: bold;
+        }
+
+/***************************************** barres progress */
+
+        progress{
+            -webkit-appearance: none;
+            appearance: none;
+            width: 25vw;
+            background-color: #727272;
+            border: none;
+        }
+
+        progress::-webkit-progress-bar {
+            background-color: #727272;
+        }
+
+        progress::-webkit-progress-value {
+            background-color: #70cbc6;
+        }
+
+        progress::-moz-progress-bar {
+            background-color: #70cbc6;
+        }
+
+        progress::-ms-fill {
+            background-color: #70cbc6;
+        }
+
+
+        /********************************************************************************************** CSS bloc Parcours */
+
+        .bloc-parcours {
+            border-left: #dedede 1px solid;
+            grid-column: 2/3;
+            grid-row: 3/5;
+            padding: 5vh;
+            background-image: url('img/redfish.jpg');
+            background-repeat: no-repeat;
+            background-position: bottom right;
+            background-color: #1f1f1f;
+        }
+
+        .timeline {
+            padding-top: 5vh;
+        }
+
+        .h3-parcours {
+            color: #70cbc6;
+        }
+
+        .fas {
+            padding-right: 1vw;
+        }
+
+        .title p {
+            font-size: 1.2em;
+        }
+
+        .title p span {
+            font-style: italic;
+        }
+
+        img.logo-ese {
+            width: 5vw;
+        }
+
+        .ul-parcours {
+            margin-bottom: 4em;
+        }
+
+        /********************************************************************************************** CSS bloc Loisirs */
+
+        .bloc-loisirs {
+            grid-column: 1/2;
+            grid-row: 4/5;
+            background-color: #1f1f1f;
+        }
+
+        .loisirs {
+            margin: 5vh;
+        }
+
+        .bloc-loisirs {
+            padding: 5vh;
+        }
+
+        .loisirs-bloc {
+            display: flex;
+            justify-content: space-around;
+            padding-top: 8vh;
+        }
+
+        .divloisirs {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .bloc-milia {
+            display: flex;
+            flex-direction: row;
+            align-items: end;
+            border-left: #dedede 2px solid;
+        }
+
+        .milia-suspiria {
+            padding: 5vh 5vh 0vh 5vh;
+        }
+
+        .reseaux-milia {
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+        }
+
+        .reseau1 {
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+        }
+
+        .reseau {
+            padding-right: 3vh;
+        }
+
+        .icone-rs {
+            padding-right: 2vh;
+        }
+
+        .logo-milia {
+            padding-left: 1vw;
+        }
+
+        .icone-loisirs {
+            width: 6vw;
+        }
+
+        @media screen and (max-width: 1600px) {
+            .reseaux-milia {
+                flex-direction: column;
+                align-items: center;
+                line-height: 0.5em;
+            }
+        }
+
+
+
+        /********************************************************************************************** CSS bloc Footer */
+
+
+        .bloc-footer {
+            border-top: #dedede 1px solid;
+            grid-column: 1/3;
+            grid-row: 5/6;
+            display: flex;
+            justify-content: space-around;
+            padding: 1em;
+            background-color: black;
+        }
+
+        .bloc-gauche-footer {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .social-medias {
+            padding-top: 20px;
+        }
+
+        .social-medias img {
+            width: 50px;
+            padding-left: 20px;
+        }
+
+        .social-medias a {
+            text-decoration: none;
+        }
+
+        .bloc-droite-footer {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .contact {
+            display: flex;
+            align-items: center;
+        }
+
+        .contacts {
+            margin: auto;
+        }
+
+        .contact a {
+            color: #70cbc6;
+        }
+
+        .contact a:hover {
+            color: #dedede;
+        }
+
+        /* protéger son numéro de téléphone des spambots en changeant le sens de lecture : RTL */
+        p.reverse {
+            unicode-bidi: bidi-override;
+            direction: rtl;
+        }
+    </style>
+
+
+</head>
+
+<body>
+
+
+    <!-------------------------------------------------------------------------------------------- HTML grille principale -->
+
+    <div class="container">
+
+        <!---------------------------------------------------------------------------------------------------- HTML header -->
+
+        <header>
+            <div class="bloc-pres">
+                <img id="photo-cv" src="img/photo-laure2.png" alt="Photo de Laure" />
+                <div class="coordonnees" itemscope itemtype="http://schema.org/Person">
+                    <h1><span itemprop="name">LAURE CARDINAUD</span></h1>
+                    <span class="metier" itemprop="jobTitle"><b>Webdesigner</b></span>
+                    <div itemprop="address" itemscope itemtype="http://schema.org/PostalAddress">
+                        <span itemprop="postalCode">44100</span>
+                        <span itemprop="addressLocality">Nantes</span>
+                    </div>
+                    <!-- Encoder son adresse mail pour la protéger des spambots : http://www.wbwip.com/wbw/emailencoder.html -->
+                    <a href="mailto:&#108;&#097;&#117;&#114;&#101;&#046;&#099;&#097;&#114;&#100;&#105;&#110;&#097;&#117;&#100;&#064;&#103;&#109;&#097;&#105;&#108;&#046;&#099;&#111;&#109;"
+                        itemprop="email" class="email">
+                        Contactez-moi !</a>
+                    <div><a class="button" href="https://laurecardinaud.com/" target="blank" itemprop="url">Visitez mon
+                            portfolio</a>
+                    </div>
+                </div>
+            </div>
+
+            <p class="presentation">Je m’appelle Laure et je suis webdesigner à Nantes.
+                Costumière de spectacle dans une vie antérieure, je suis passionnée par le web et par la création au
+                sens
+                large,
+                j’aime m’imprégner des nouveautés et différents courants créatifs, que ce soit pour le web, le
+                graphisme,
+                les
+                arts textiles…<br>
+                <br><b>• Mes appétences :</b> Graphisme, typographie, design UI/UX, motion design…
+                <br><b>• Mes atouts :</b> Créativité, curiosité, organisation, empathie !<br>
+                <br><b>À vos côtés pour une prochaine aventure digitale ?</b>
+            </p>
+        </header>
+
+        <!------------------------------------------------------------------------------------ HTML bloc compétences -->
+
+        <div class="bloc-competences">
+
+            <div class="titre-bloc">
+                <h2>COMPÉTENCES</h2>
+            </div>
+
+            <div class="competences">
+                <div class="design">
+                    <img src="img/pencil.png" alt="Icone design graphique">
+                    <h3>DESIGN GRAPHIQUE</h3>
+                    <p><span>Création d’identités graphiques, logos, visuels et documents print et web</span><br><br>
+                        Typographie • dessin vectoriel • retouche photo • motion design</p>
+                </div>
+
+                <div class="webdesign">
+                    <img src="img/monitor.png" alt="Icone webdesign">
+                    <h3>WEBDESIGN</h3>
+                    <p><span>UX/UI design • Design d’interfaces web • Responsive design • Ergonomie</span><br><br>
+                        Intégration HMTL5 / CSS3
+                        CMS WordPress, Prestashop et Magento</p>
+                </div>
+
+                <div class="webmarketing">
+                    <img src="img/target.png" alt="Icone webmarketing">
+                    <h3>WEBMARKETING</h3>
+                    <p><span>Création de d'emailings, bannières et visuels pour les réseaux sociaux</span><br><br>
+                        SEO/SEA • Campagnes Google Ads
+                        Stratégie de communication</p>
+                </div>
+            </div>
+        </div>
+
+        <!------------------------------------------------------------------------------------ HTML bloc outils -->
+
+        <div class="bloc-outils">
+
+            <h2>OUTILS</h2>
+
+            <div class="outils-bloc">
+                <div class="bloc-outil">
+                    <div class="outil">Photoshop / Illustrator</div>
+                    <div class="jauge">
+                        <progress class="avancement" value="85" max="100">
+                            <div pseudo="-webkit-progress-inner-element">
+                                <div pseudo="-webkit-progress-bar">
+                                    <div pseudo="-webkit-progress-value"></div>
+                                </div>
+                            </div>
+                        </progress>
+
+                    </div>
+                </div>
+
+                <div class="bloc-outil">
+                    <div class="outil">InDesign</div>
+                    <div class="jauge"><progress class="avancement" value="75" max="100"></progress></div>
+                </div>
+
+                <div class="bloc-outil">
+                    <div class="outil">Adobe XD</div>
+                    <div class="jauge"><progress class="avancement" value="85" max="100"></progress></div>
+                </div>
+
+                <div class="bloc-outil">
+                    <div class="outil">After Effects</div>
+                    <div class="jauge"><progress class="avancement" value="60" max="100"></progress></div>
+                </div>
+
+                <div class="bloc-outil">
+                    <div class="outil">Wordpress / Prestashop</div>
+                    <div class="jauge"><progress class="avancement" value="80" max="100"></progress></div>
+                </div>
+
+                <div class="bloc-outil">
+                    <div class="outil">HTML / CSS / JS</div>
+                    <div class="jauge"><progress class="avancement" value="60" max="100"></progress></div>
+                </div>
+            </div>
+
+        </div>
+
+        <!------------------------------------------------------------------------------------ HTML bloc Loisirs -->
+
+        <div class="bloc-loisirs">
+            <h2>INTÉRÊTS & LOISIRS</h2>
+
+            <div class="milia-suspiria">
+                <h3 class="milia">Milia Suspiria</h3>
+                <p>Bijoux, curiosités, et petites diableries</p>
+                <div class="bloc-milia">
+                    <img class="logo-milia" src="img/logo-milia.png" alt="Logo Milia Suspiria">
+                    <ul>
+                        <li>Création de bijoux et petits objets de décoration</li>
+                        <li>Identité visuelle et logo</li>
+                        <li>E-commerce, réseaux sociaux</li>
+                    </ul>
+                </div>
+                <div class="reseaux-milia">
+
+                    <div class="reseau1">
+                        <a class="icone-rs" href="https://www.etsy.com/fr/shop/MiliaSuspiria" target="_blank">
+                            <img src="img/etsy.png" alt="icone Etsy" /></a>
+                        <p class="reseau">www.etsy.com/fr/shop/MiliaSuspiria</p>
+                    </div>
+                    <div class="reseau1">
+                        <a class="icone-rs" href="https://www.facebook.com/MiliaSuspiria/" target="_blank">
+                            <img src="img/facebook.png" alt="icone Facebook" /></a>
+                        <p class="reseau">@miliasuspiria</p>
+                    </div>
+                    <div class="reseau1">
+                        <a class="icone-rs" href="https://www.instagram.com/miliasuspiria/?hl=fr" target="_blank">
+                            <img src="img/instagram2.png" alt="icone Instagram" /></a>
+                        <p class="reseau">@miliasuspiria</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="loisirs">
+                <div class="loisirs-bloc">
+                    <div class="divloisirs">
+                        <img class="icone-loisirs" src="img/creation.png" alt="icône graphisme">
+                        <div class="text-loisirs">Graphisme</div>
+                    </div>
+                    <div class="divloisirs">
+                        <img class="icone-loisirs" src="img/musique.png" alt="icône musique">
+                        <div class="text-loisirs">Musique</div>
+                    </div>
+                    <div class="divloisirs">
+                        <img class="icone-loisirs" src="img/cinema.png" alt="icône cinéma">
+                        <div class="text-loisirs">Cinéma</div>
+                    </div>
+
+                </div>
+                <div class="loisirs-bloc">
+                    <div class="divloisirs">
+                        <img class="icone-loisirs" src="img/voyages.png" alt="icône voyages">
+                        <div class="text-loisirs">Voyages</div>
+                    </div>
+                    <div class="divloisirs">
+                        <img class="icone-loisirs" src="img/nature.png" alt="icône nature">
+                        <div class="text-loisirs">Nature</div>
+                    </div>
+                    <div class="divloisirs">
+                        <img class="icone-loisirs" src="img/couture.png" alt="icône couture">
+                        <div class="text-loisirs">Couture</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!------------------------------------------------------------------------------------ HTML bloc Parcours -->
+
+        <div class="bloc-parcours">
+            <h2>PARCOURS</h2>
+
+            <div class="timeline">
+
+
+
+                <div class="entry">
+                    <div class="title">
+                        <h3 class="h3-parcours">2019 - 2020</h3>
+                        <img class="logo-ese" src="img/logo-mds.png" alt="Logo My Digital School">
+                        <p><i class="fas fa-user-graduate"></i><b>Bachelor 3 Webdesign</b>, <span>My Digital School
+                                (Nantes)</span></p>
+                    </div>
+                    <div class="detail-mission">
+                        <ul class="ul-parcours">
+                            <li>UI/UX design, ergonomie, maquettage, motion design</li>
+                            <li>Design graphique, logos et retouche photo</li>
+                            <li>Développement côté client</li>
+                            <li>Gestion de projet agile</li>
+                        </ul>
+                    </div>
+                </div>
+
+
+                <div class="entry">
+                    <div class="title">
+                        <h3 class="h3-parcours">2019 - 2020</h3>
+                        <img class="logo-ese" src="img/logo-heliceo.png" alt="Logo Hélicéo">
+                        <p><i class="fas fa-briefcase"></i><b>Chargée de Marketing et Communication / Webdesigner</b>,
+                            <span>Hélicéo (Nantes)</span>
+                        </p>
+                    </div>
+                    <div class="detail-mission">
+                        <ul class="ul-parcours">
+                            <li>Campagnes emailings et Google Ads, création de contenus web, montages vidéos</li>
+                            <li>Création de visuels et publications pour les réseaux sociaux, community management</li>
+                            <li>Design du stand Hélicéo et organisation logistique pour le salon Intergéo, plus grand
+                                salon international de la géomesure</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="entry">
+                    <div class="title">
+                        <h3 class="h3-parcours">MARS - AVRIL 2019</h3>
+                        <img class="logo-ese" src="img/logo-portecle.png" alt="Logo Radical Web">
+                        <p><i class="fas fa-briefcase"></i><b>Infographiste / Webdesigner</b>, <span>MonPorteClef.fr
+                                (Nantes)</span></p>
+                    </div>
+                    <div class="detail-mission">
+                        <ul class="ul-parcours">
+                            <li>Réalisation des visuels produits et mise en ligne sous Magento</li>
+                            <li>Bannières promotionnelles, habillages de pages</li>
+                            <li>Visuels pour les réseaux sociaux</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="entry">
+                    <div class="title">
+                        <h3 class="h3-parcours">2018 - 2019</h3>
+                        <img class="logo-ese" src="img/logo-arinfo.png" alt="Logo Arinfo">
+                        <p><i class="fas fa-user-graduate"></i><b>Titre Professionnel Designer Web</b>, <span>Arinfo
+                                (Nantes)</span></p>
+                    </div>
+                    <div class="detail-mission">
+                        <ul class="ul-parcours">
+                            <li>Refonte graphique de l'identité et du site web d'une école de parapente, intégration
+                                HTML / CSS</li>
+                            <li>Création d'un site e-commerce sous Prestashop pour une marque de décoration d'intérieur
+                            </li>
+                            <li>Refonte du logo et création d'un site vitrine sous WordPress pour un pub morlaisien</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="entry">
+                    <div class="title">
+                        <h3 class="h3-parcours">JUILLET 2018</h3>
+                        <img class="logo-ese" src="img/logo-dinno.png" alt="Logo Dinno">
+                        <p><i class="fas fa-briefcase"></i><b>Webdesigner</b>, <span>Dinno (Nantes)</span></p>
+                    </div>
+                    <div class="detail-mission">
+                        <ul class="ul-parcours">
+                            <li>Refonte graphique du site de l'entreprise</li>
+                            <li>Prototypage/maquettage
+                            </li>
+                            <li>Recette d'application mobile</li>
+                        </ul>
+                    </div>
+                </div>
+
+            </div>
+
+
+        </div>
+
+        <!------------------------------------------------------------------------------------ HTML bloc Footer -->
+
+        <div class="bloc-footer">
+            <div class="bloc-gauche-footer">
+                <img class="logo-laure" src="img/logo-laure-mini.png" alt="logo Laure Cardinaud">
+                <div class="social-medias">
+                    <a href="https://www.linkedin.com/in/laure-cardinaud/" target="_blank">
+                        <img src="img/linkedin.png" alt="icone Linkedin" />
+                    </a>
+                    <a href="https://www.instagram.com/miliasuspiria/?hl=fr" target="_blank">
+                        <img src="img/instagram.png" alt="icone Instagram" />
+                    </a>
+                    <a href="https://www.behance.net/laureC" target="_blank">
+                        <img src="img/behance.png" alt="icone Behance" />
+                    </a>
+                </div>
+            </div>
+
+            <div class="bloc-droite-footer">
+                <div class="contacts">
+                    <div class="contact"><i class="fas fa-map-marker-alt"></i>
+                        <p>Nantes</p>
+                    </div>
+                    <div class="contact"><i class="fas fa-envelope"></i>
+                        <a
+                            href="mailto:&#108;&#097;&#117;&#114;&#101;&#046;&#099;&#097;&#114;&#100;&#105;&#110;&#097;&#117;&#100;&#064;&#103;&#109;&#097;&#105;&#108;&#046;&#099;&#111;&#109;">Envoyez-moi
+                            un message</a>
+                        <br>
+                    </div>
+                    <div class="contact">
+                        <i class="fas fa-phone-alt"></i>
+                        <!-- numéro de téléphone inversé pour changement du sens de lecture RTL dans le CSS -->
+                        <p class="reverse">55 17 56 70 60</p>
+                    </div>
+
+                </div>
+            </div>
+
+        </div>
+    </div>
+</body>
+
+</html>

@@ -108,6 +108,26 @@
 
         }
 
+         /* -----------------------------------texte grid projets */
+
+        .texte-projet {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            pointer-events: none;
+            display: none;
+        }
+
+        .wrapper:hover .texte-projet {
+            display: block;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            pointer-events: none;
+        }
+
 
         /* -----------------------------------image couleur */
 
@@ -116,6 +136,8 @@
             filter: none;
 
         }
+
+   
 
 
         /*----------------------------------- position des projets */
@@ -127,12 +149,43 @@
             justify-content: space-around;
         }
 
-        .texte-projet {
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            pointer-events: none;
+        
+
+
+        /* -----------------------------------------------------------------------CSS DETAIL DES PROJETS */
+
+        h2 {
+            font-size: 3em;
+            margin: 10vh 0vh 5vh 0vh;
+            color:#dedede;
+        }
+
+        h3 {
+            font-size: 1.3em;
+            color:#dedede;
+        }
+
+        .paragraphe-projet {
+            margin: 5em 20em;
+            color: gray;
+        }
+
+        .flex-desc {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            background-color: #1f1f1f;
+            padding-bottom: 10vh;
+        }
+
+        .images-projets {
+            padding-bottom: 10vh;
+        }
+
+        /* -----------------------------------------------------------------------CSS A PROPOS */
+
+        #a-propos{
+            height: 100%;
         }
 
 
@@ -172,14 +225,15 @@
                     <li @click="display = 'a-propos'"><a href="#!">A propos</a></li>
                     <li><a href="#!">Contact</a></li>
                 </ul>
-    
+
                 <div class="logo">
                     <a href="file:///C:/Users/laure/Documents/GitHub/2020-mds-portfolio/portfolio-VueJS.html"><img
                             src="img/logo-laure.png"></a>
                 </div>
-    
+
                 <div class="social-media">
-                    <a href="https://www.linkedin.com/in/laure-cardinaud/" target="_blank"><img src="img/linkedin.png"></a>
+                    <a href="https://www.linkedin.com/in/laure-cardinaud/" target="_blank"><img
+                            src="img/linkedin.png"></a>
                     <a href="https://www.behance.net/laureC" target="_blank"><img src="img/behance.png"></a>
                     <a href="https://www.instagram.com/miliasuspiria/" target="_blank"><img src="img/instagram.png"></a>
                 </div>
@@ -202,15 +256,24 @@
                 </div>
             </div>
         </div>
+
+
         <div id="detail-projet" v-if="display === 'detail-projet'">
-            DETAIL PROJET
-            {{ projets[id_detail_projet].titre }}
-            {{ projets[id_detail_projet].description }}
+
+            <div class="flex-desc">
+                <h2>{{ projets[id_detail_projet].titre }}</h2>
+                <h3>{{ projets[id_detail_projet].description }}</h3>
+                <p class="paragraphe-projet">{{ projets[id_detail_projet].description_detail }}</p>
+                <img class="images-projets" :src="projets[id_detail_projet].image1">
+                <img class="images-projets" :src="projets[id_detail_projet].image2">
+                <img class="images-projets" :src="projets[id_detail_projet].image3">
+            </div>
 
         </div>
-        <div id="a-propos" v-if="display === 'a-propos'">
-            A PROPOS
 
+
+        <div id="a-propos" v-if="display === 'a-propos'">
+            <h2>A PROPOS</h2>>
 
         </div>
     </div>
@@ -228,15 +291,25 @@
                 id_detail_projet: null,
                 projets: [
                     {
-                        titre: "HELICEO x DJI",
+                        titre: "HÉLICÉO x DJI",
                         image: "img/heliceo-web-home.jpg",
+                        image1: "img/heliceo-web-showcase.png",
+                        image2: "img/heliceo-web-page-DJI.png",
+                        image3: "img/heliceo-web-page-DJI2.png",
                         description: "Concepteurs de drones professionnels",
+                        description_detail: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi egestas mattis mi, ac porta velit mollis vitae. Donec placerat risus libero, ut molestie ligula facilisis a. Vestibulum convallis fermentum vulputate. Quisque at leo mattis, pellentesque arcu elementum, laoreet libero. Proin sed orci quam. Duis neque arcu, fringilla ac nunc eget, mattis imperdiet leo. Ut erat felis, condimentum at sapien eget, pulvinar venenatis elit. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis fermentum facilisis ex, in tempus leo feugiat vitae. Donec ut massa enim. Cras felis eros, interdum a lorem quis, condimentum sollicitudin lacus. Fusce et nisl eu augue aliquet pharetra non vitae nunc."
+
                     },
 
                     {
-                        titre: "HELICEO à INTERGÉO",
+                        titre: "HÉLICÉO à INTERGÉO",
                         image: "img/heliceo-print-home.jpg",
+                        image1: "img/heliceo-print-hopup-SF6&superbathy-mockup.jpg",
+                        image2: "img/heliceo-print-datasheets-mockup.png",
+                        image3: "img/heliceo-print-business-cards-mockup.png",
                         description: "Salon international de la géomesure",
+                        description_detail: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi egestas mattis mi, ac porta velit mollis vitae. Donec placerat risus libero, ut molestie ligula facilisis a. Vestibulum convallis fermentum vulputate. Quisque at leo mattis, pellentesque arcu elementum, laoreet libero. Proin sed orci quam. Duis neque arcu, fringilla ac nunc eget, mattis imperdiet leo. Ut erat felis, condimentum at sapien eget, pulvinar venenatis elit. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis fermentum facilisis ex, in tempus leo feugiat vitae. Donec ut massa enim. Cras felis eros, interdum a lorem quis, condimentum sollicitudin lacus. Fusce et nisl eu augue aliquet pharetra non vitae nunc."
+
                     },
 
                     {
@@ -297,6 +370,7 @@
                         image: "img/costume-home.jpg",
                         description: "Costume de théâtre",
                     },
+
 
                 ]
             },
