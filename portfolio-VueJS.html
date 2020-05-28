@@ -19,6 +19,7 @@
             height: 100px;
             justify-content: space-between;
             background-color: #1f1f1f;
+            /* border-bottom: gray 1px solid; */
         }
 
         .logo {
@@ -108,7 +109,7 @@
 
         }
 
-         /* -----------------------------------texte grid projets */
+        /* -----------------------------------texte grid projets */
 
         .texte-projet {
             position: absolute;
@@ -137,7 +138,7 @@
 
         }
 
-   
+
 
 
         /*----------------------------------- position des projets */
@@ -149,7 +150,7 @@
             justify-content: space-around;
         }
 
-        
+
 
 
         /* -----------------------------------------------------------------------CSS DETAIL DES PROJETS */
@@ -157,12 +158,12 @@
         h2 {
             font-size: 3em;
             margin: 10vh 0vh 5vh 0vh;
-            color:#dedede;
+            color: #dedede;
         }
 
         h3 {
             font-size: 1.3em;
-            color:#dedede;
+            color: #dedede;
         }
 
         .paragraphe-projet {
@@ -184,12 +185,112 @@
 
         /* -----------------------------------------------------------------------CSS A PROPOS */
 
-        #a-propos{
-            height: 100%;
+        header {
+            background-color: #1f1f1f;
+            padding: 5vh;
+        }
+
+        .bloc-pres {
+            display: flex;
+            flex-direction: row;
+            margin-bottom: 30px;
+            justify-content: center;
+            align-items: center;
+            color: #dedede;
+            border: #dedede solid 1px;
+            padding: 10vh;
+            margin: 0vh 15vh;
+            border-radius: 50px;
+            background-image: url(img/flamingo.jpg);
+            background-size: cover;
+            background-repeat: no-repeat;
+
+        }
+
+        .presentation {
+            width: 50%;
+            margin: auto;
+            color: #dedede;
+            padding: 8vh 0vh 4vh 0vh;
+            line-height: 1.8em;
+        }
+
+        .presentation2{
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            font-weight: bold;
+            color: #dedede;
+            line-height: 1.8em;
+        }
+
+        .button {
+            display: block;
+            margin: auto;
+            width: 12em;
+            height: 4em;
+            line-height: 60px;
+            background: #70cbc6;
+            color: #1f1f1f;
+            text-align: center;
+            text-decoration: none;
+            font-weight: bold;
+            margin: 8vh 0vh;
+            transition: opacity .2s ease-out;
+            -moz-transition: opacity .2s ease-out;
+            -webkit-transition: opacity .2s ease-out;
+            -o-transition: opacity .2s ease-out;
+        }
+
+        .bloc-bouton {
+            display: flex;
+            justify-content: center;
+        }
+
+        .button:hover {
+            opacity: 0.4;
+            transition: opacity .2s ease-out;
+            -moz-transition: opacity .2s ease-out;
+            -webkit-transition: opacity .2s ease-out;
+            -o-transition: opacity .2s ease-out;
+        }
+
+        #photo-cv {
+            width: 16em;
+            margin-right: 5vh;
+        }
+
+        .coordonnees {
+            text-align: left;
+        }
+
+        .email {
+            color: #70cbc6;
+        }
+
+        .metier {
+            font-size: 1.8em;
+            padding-bottom: 50px;
+            margin: unset;
+        }
+
+        .presentation {
+            color: #dedede;
+        }
+
+        .accroche {
+            display: flex;
+            justify-content: center;
+            font-size: 1.8em;
+            color: #70cbc6;
+            font-weight: bold;
+            margin-top: 10vh;
         }
 
 
         /* -----------------------------------------------------------------------CSS FOOTER */
+
         footer {
             background-color: white;
             padding: 50px;
@@ -223,7 +324,7 @@
                 <ul class="navbar">
                     <li @click="display = 'portfolio'"><a href="#!">Home</a></li>
                     <li @click="display = 'a-propos'"><a href="#!">A propos</a></li>
-                    <li><a href="#!">Contact</a></li>
+                    <li @click="display = 'contact'"><a href="#!">Contact</a></li>
                 </ul>
 
                 <div class="logo">
@@ -271,9 +372,47 @@
 
         </div>
 
+        <!------------------------------------------------------------------------------- HTML A PROPOS -->
 
         <div id="a-propos" v-if="display === 'a-propos'">
-            <h2>A PROPOS</h2>>
+            <header>
+                <div class="bloc-pres">
+                    <img id="photo-cv" src="img/photo-laure.png" alt="Photo de Laure" />
+                    <div class="coordonnees" itemscope itemtype="http://schema.org/Person">
+                        <h1 class="nom">LAURE CARDINAUD</h1>
+                        <h2 class="metier">Webdesigner</h2>
+                        <div itemprop="address" itemscope itemtype="http://schema.org/PostalAddress">
+                            <span itemprop="postalCode">44100</span>
+                            <span itemprop="addressLocality">Nantes</span>
+                        </div>
+                        <!-- Encoder son adresse mail pour la protéger des spambots : http://www.wbwip.com/wbw/emailencoder.html -->
+                        <a href="mailto:&#108;&#097;&#117;&#114;&#101;&#046;&#099;&#097;&#114;&#100;&#105;&#110;&#097;&#117;&#100;&#064;&#103;&#109;&#097;&#105;&#108;&#046;&#099;&#111;&#109;"
+                            itemprop="email" class="email">
+                            Contactez-moi !</a>
+                    </div>
+                </div>
+
+                <p class="presentation">Je m’appelle Laure et je suis webdesigner à Nantes.
+                    Costumière de spectacle dans une vie antérieure, je suis passionnée par le web et par la création au
+                    sens
+                    large,
+                    j’aime m’imprégner des nouveautés et différents courants créatifs, que ce soit pour le web, le
+                    graphisme,
+                    les
+                    arts textiles…<br>
+                <div class="presentation2">• Mes appétences : Graphisme, typographie, design UI/UX,
+                    motion design…<br>
+                    • Mes atouts : Créativité, curiosité, organisation, empathie !
+                </div>
+                </p>
+
+                <p class="accroche">À vos côtés pour une prochaine aventure numérique ?</p>
+
+                <div class="bloc-bouton"><a class="button" href="https://laurecardinaud.com/" target="blank"
+                        itemprop="url">Visitez mon portfolio</a>
+                </div>
+
+            </header>
 
         </div>
     </div>
